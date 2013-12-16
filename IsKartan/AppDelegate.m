@@ -7,24 +7,62 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Rink.h"
+#import "City.h"
 #import "MasterViewController.h"
+
+// -----sebsa346------
+@interface AppDelegate()
+- (NSArray *)iceSkatingRinks;
+@end
+// --------
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+/* Gammalt och oklart
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
+*/ 
+ 
+ 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // ---------- sebsa346 ----------
+    // Hämta MasterViewController
+    MasterViewController *mvc;
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    mvc = (MasterViewController *)navigationController.topViewController;
+    
+    // Ge länkar till MasterViewController
+    mvc.rinks = [NSMutableArray arrayWithArray:[self iceSkatingRinks]];
+    // --------------------
+
+
+    /* Fanns från borjan......
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    controller.managedObjectContext = self.managedObjectContext;*/
+    
     return YES;
 }
-							
+
+// -------sebsa346 ------------ (lab4)
+- (NSArray *)iceSkatingRinks {
+    Rink *firstRink = [[Rink alloc] initRinks:@"Bandyplan"]:[NSUInteger numberWithInt:2];
+    
+    Rink *fourthRink = [[Rink alloc] initRinks:@"Ryds bakgård"]:[NSUInteger numberWithInt:3];
+    
+ 
+    
+    return [NSArray arrayWithObjects:firstRink, fourthRink, nil];
+}
+// ---------------------
+
+/* Gammalt och oklart............
+ 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -133,6 +171,8 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
+
+/* GAMMALT FORTSÄTTER HÄR ................
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
@@ -148,4 +188,6 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+*/
+ 
 @end

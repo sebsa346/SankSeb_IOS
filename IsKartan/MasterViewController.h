@@ -15,4 +15,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+// ---- sebsa346---------
+@property (strong, nonatomic) NSMutableArray *rinks; // Denna vykontrollers modell, består av Link-objekt
+
 @end

@@ -16,6 +16,9 @@
 
 @implementation MasterViewController
 
+// ---- sebsa346 -----
+@synthesize rinks;
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -30,6 +33,25 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
+
+// sebsa346----------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        // Skicka länken till detaljvyn
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.rink = [self.rinks objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
+}
+
+
+
+
+
+
+
+// Vas is das.................
 
 - (void)didReceiveMemoryWarning
 {
@@ -105,6 +127,7 @@
     return NO;
 }
 
+/* Gammalt......
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -113,6 +136,7 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
+ */
 
 #pragma mark - Fetched results controller
 

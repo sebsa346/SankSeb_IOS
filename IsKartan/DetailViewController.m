@@ -9,23 +9,46 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+// Från lab4....
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+//
 - (void)configureView;
 @end
 
 @implementation DetailViewController
 
+// ----------- sebsa346 ----- lab4
+@synthesize rink;
+@synthesize masterPopoverController = _masterPopoverController;
+
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+// Egen setter för link som uppdaterar gränsnittet så fort länken ändras
+- (void)setRink:(Rink *)newRink
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    // Om länken är ny, sätt den
+    if (rink != newRink) {
+        rink = newRink;
         
-        // Update the view.
+        // Uppdatera vyn
         [self configureView];
+    }
+    
+    // Om mastervyn ligger i en popover så stäng den (observera att vi kan skicka meddelanden till nil-objekt)
+    [self.masterPopoverController dismissPopoverAnimated:YES];
+}
+
+- (void)configureView
+{
+    // Uppdaterar användargränsnittet för att visa en länk
+    if (self.rink) {
+        self.title = [NSString stringWithFormat:@"%@", self.rink.title]; // Visa titeln
+        self.noRinks = [NSUInteger self.rink.noRinks]; // Visa antalet Rinkar
     }
 }
 
+
+/* Gammalt.....
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -33,7 +56,7 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
     }
-}
+}*/
 
 - (void)viewDidLoad
 {

@@ -27,6 +27,8 @@
 		FA1E458B18576A5B00A42BE2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1E456118576A5600A42BE2 /* CoreData.framework */; };
 		FA1E459318576A5C00A42BE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA1E459118576A5C00A42BE2 /* InfoPlist.strings */; };
 		FA1E459618576A5C00A42BE2 /* IsKartanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E459518576A5C00A42BE2 /* IsKartanTests.m */; };
+		FAF8FD1F185F530C006CFA8C /* Rink.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8FD1E185F530C006CFA8C /* Rink.m */; };
+		FAF8FD22185F54C6006CFA8C /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8FD21185F54C6006CFA8C /* City.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		FA1E459218576A5C00A42BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA1E459418576A5C00A42BE2 /* IsKartanTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsKartanTests.h; sourceTree = "<group>"; };
 		FA1E459518576A5C00A42BE2 /* IsKartanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsKartanTests.m; sourceTree = "<group>"; };
+		FAF8FD1D185F530C006CFA8C /* Rink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rink.h; sourceTree = "<group>"; };
+		FAF8FD1E185F530C006CFA8C /* Rink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rink.m; sourceTree = "<group>"; };
+		FAF8FD20185F54C6006CFA8C /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		FAF8FD21185F54C6006CFA8C /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 				FA1E457E18576A5800A42BE2 /* DetailViewController.h */,
 				FA1E457F18576A5B00A42BE2 /* DetailViewController.m */,
 				FA1E457818576A5800A42BE2 /* IsKartan.xcdatamodeld */,
+				FAF8FD1C185F52D6006CFA8C /* Model */,
 				FA1E456418576A5600A42BE2 /* Supporting Files */,
 			);
 			path = IsKartan;
@@ -172,6 +179,17 @@
 				FA1E459118576A5C00A42BE2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAF8FD1C185F52D6006CFA8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8FD1D185F530C006CFA8C /* Rink.h */,
+				FAF8FD1E185F530C006CFA8C /* Rink.m */,
+				FAF8FD20185F54C6006CFA8C /* City.h */,
+				FAF8FD21185F54C6006CFA8C /* City.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +307,8 @@
 				FA1E457A18576A5800A42BE2 /* IsKartan.xcdatamodeld in Sources */,
 				FA1E457D18576A5800A42BE2 /* MasterViewController.m in Sources */,
 				FA1E458018576A5B00A42BE2 /* DetailViewController.m in Sources */,
+				FAF8FD1F185F530C006CFA8C /* Rink.m in Sources */,
+				FAF8FD22185F54C6006CFA8C /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +489,7 @@
 				FA1E459B18576A5C00A42BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA1E459C18576A5C00A42BE2 /* Build configuration list for PBXNativeTarget "IsKartanTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +498,7 @@
 				FA1E459E18576A5C00A42BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
